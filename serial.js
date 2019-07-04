@@ -19,6 +19,7 @@ var serial = {};
       { 'vendorId': 0x2341, 'productId': 0x8050 },
       { 'vendorId': 0x239A, 'productId': 0x000E },
       { 'vendorId': 0x239A, 'productId': 0x800D },
+      { 'vendorId': 0x0483, 'productId': 0x5750 },	// for STM32F412
     ];
     return navigator.usb.requestDevice({ 'filters': filters }).then(
       device => new serial.Port(device)
@@ -27,9 +28,9 @@ var serial = {};
 
   serial.Port = function(device) {
     this.device_ = device;
-    this.interfaceNumber_ = 2;  // original interface number of WebUSB Arduino demo
-    this.endpointIn_ = 5;       // original in endpoint ID of WebUSB Arduino demo
-    this.endpointOut_ = 4;      // original out endpoint ID of WebUSB Arduino demo
+    this.interfaceNumber_ = 1;  // original interface number of WebUSB Arduino demo
+    this.endpointIn_ = 3;       // original in endpoint ID of WebUSB Arduino demo
+    this.endpointOut_ = 3;      // original out endpoint ID of WebUSB Arduino demo
   };
 
   serial.Port.prototype.connect = function() {
