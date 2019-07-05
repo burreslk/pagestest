@@ -2,8 +2,8 @@
 
 var device;
 
-document.write("test count=0x0003");
-console.log("console-log = 0x0001");
+document.write("test count=0x0004");
+console.log("console-log = 0x0004");
 
 
 
