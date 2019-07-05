@@ -23,4 +23,5 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
 })
 .catch(error => { console.log(error); });
 
-document.write("test1");
+document.write("test count=0x0001");
+console.log("test log=0x0001");
