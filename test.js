@@ -1,6 +1,5 @@
 
 
-
 var device;
 
 navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
