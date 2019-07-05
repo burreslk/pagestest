@@ -2,7 +2,7 @@
 
 var device;
 
-document.write("test count=0x0007");
+document.write("test count=0x0008");
 console.log("console-log = 0x0004");
 
   document.getElementsByTagName("button")[0].onclick = function (e){
