@@ -3,6 +3,7 @@
 var device;
 
 document.write("test count=0x0001");
+console.log("console-log = 0x0001")
 
 navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
 .then(selectedDevice => {
