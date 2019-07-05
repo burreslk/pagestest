@@ -6,7 +6,7 @@ document.write("test count=0x0007");
 console.log("console-log = 0x0004");
 
   document.getElementsByTagName("button")[0].onclick = function (e){
-    navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
+    navigator.usb.requestDevice({ filters: [{ vendorId: 0x1038 }] })
     .then(selectedDevice => {
        device = selectedDevice;
        console.log('found WebUSB device');
