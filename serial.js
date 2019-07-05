@@ -19,6 +19,8 @@ var serial = {};
       { 'vendorId': 0x2341, 'productId': 0x8050 },
       { 'vendorId': 0x239A, 'productId': 0x000E },
       { 'vendorId': 0x239A, 'productId': 0x800D },
+	  { 'vendorId': 0x0483, 'productId': 0x5750 },
+	  { 'vendorId': 0x0483, 'productId': 0x374B },
     ];
     return navigator.usb.requestDevice({ 'filters': filters }).then(
       device => new serial.Port(device)
