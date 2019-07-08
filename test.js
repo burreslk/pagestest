@@ -2,8 +2,8 @@
 
 var device;
 
-document.write("test count=0x0001");
-console.log("console-log = 0x0001");
+document.write("test count=0x0002");
+console.log("console-log = 0x0002");
 
   document.getElementsByTagName("button")[0].onclick = function (e){
     navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
@@ -19,7 +19,7 @@ console.log("console-log = 0x0001");
         recipient: 'device',
         request: 0x01,
         value: 0x01,
-        index: 0x02})) // Ready to receive data
+        index: 0x02}, 0xFF)) // Ready to receive data
     .then(() => device.transferIn(3, 64)) // Waiting for 64 bytes of data from endpoint #3.
     .then(result => {
       let decoder = new TextDecoder();
