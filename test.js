@@ -2,8 +2,8 @@
 
 var device;
 
-document.write("test count=0x0002");
-console.log("console-log = 0x0002");
+document.write("test count=0x0004");
+console.log("console-log = 0x0004");
 
   document.getElementsByTagName("button")[0].onclick = function (e){
     navigator.usb.requestDevice({ filters: [{ vendorId: 0x0483 }] })
@@ -19,12 +19,13 @@ console.log("console-log = 0x0002");
         recipient: 'device',
         request: 0x01,
         value: 0x01,
-        index: 0x02}, 0xFF)) // Ready to receive data
-    .then(() => device.transferIn(3, 64)) // Waiting for 64 bytes of data from endpoint #3.
-    .then(result => {
-      let decoder = new TextDecoder();
-      console.log('Received: ' + decoder.decode(result.data));
-    })
+        index: 0x02}, 18)) // Ready to receive data
+	.then((USBInTransferResult) =>console.log("Get URL:" + USBInTransferResult))
+//  .then(() => device.transferIn(3, 64)) // Waiting for 64 bytes of data from endpoint #3.
+//    .then(result => {
+//      let decoder = new USBInTransferResult();
+//      console.log('Received: ' + decoder.decode(result.data));
+//    })
     .catch(error => { console.log(error); 
       console.log(error.code); 
       console.log(error.message); 
