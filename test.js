@@ -1,6 +1,6 @@
 var device;
 
-document.write("test count=0x0008");
+document.write("test count=0x0009");
 console.log("console-log = 0x0007");
 
   document.getElementsByTagName("button")[0].onclick = function (e){
@@ -11,7 +11,7 @@ console.log("console-log = 0x0007");
        return device.open(); // Begin a session.
      })
     .then(() => device.selectConfiguration(1)) // Select configuration #1 for the device.
-    .then(() => device.claimInterface(1)) // Request exclusive control over interface #2.
+    .then(() => device.claimInterface(2)) // Request exclusive control over interface #2.
     .then(() => device.controlTransferIn({
         requestType: 'vendor',
         recipient: 'device',
